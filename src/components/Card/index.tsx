@@ -8,11 +8,27 @@ type Votes = {
   [key: string]: number;
 };
 
-export const Card = () => {
-  const [votes, setVotes] = React.useState<Votes>({
-    up: 90,
-    down: 30,
-  });
+type character = {
+  id: number;
+  imageUrl: string;
+  name: string;
+  category: string;
+  createdAt: string;
+  description: string;
+  votes: {
+    up: number;
+    down: number;
+  };
+};
+
+type Props = {
+  item: character;
+};
+
+export const Card: React.FC<Props> = ({ item }) => {
+  const { id, name, imageUrl, description, createdAt, category, votes: totalVotes } = item;
+
+  const [votes, setVotes] = React.useState<Votes>(totalVotes);
 
   const calculatePercentageOfVotes = (currentVotes: number): number => {
     const totalVotes = Object.values(votes).reduce((acc, curr) => acc + curr, 0);
@@ -30,22 +46,20 @@ export const Card = () => {
   const votesDown = calculatePercentageOfVotes(votes.down);
 
   return (
-    <div className="card-component">
+    <div className="card-component" style={{ backgroundImage: `url(${imageUrl})` }}>
       <div className="card-info">
         <div className="card-title">
           <span className="vote-icon">
             <i className="fa fa-thumbs-up" />
           </span>
-          <span className="title">Mark Zuckerberg</span>
+          <span className="title">{name}</span>
         </div>
         <div className="card-content">
           <div className="remaining-time">
-            <b>1 month ago</b> in Business
+            <b>{createdAt}</b> in {category}
           </div>
           <div>
-            <span className="description">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed tenetur placeat.
-            </span>
+            <span className="description">{description}</span>
           </div>
           <div className="voting">
             <VotingButtons onVote={registerVote} />
