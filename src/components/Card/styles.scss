@@ -1,10 +1,8 @@
 .card-component {
   position: relative;
   display: flex;
-  height: 430px;
-  width: 420px;
+  height: 470px;
   background-color: red($color: #ededed);
-  background-image: url('../../assets/images/Mark_Zuckerberg.jpg');
   background-size: cover;
   background-position: center;
   align-items: flex-end;
@@ -42,7 +40,14 @@
         bottom: 10px;
         margin-right: 6px;
         padding: 4px;
+      }
+
+      .vote-icon-up {
         background-color: rgb(87, 184, 179);
+      }
+
+      .vote-icon-down {
+        background-color: rgb(244, 176, 69);
       }
     }
 
