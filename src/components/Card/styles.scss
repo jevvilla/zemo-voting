@@ -1,0 +1,102 @@
+.card-component {
+  position: relative;
+  display: flex;
+  height: 430px;
+  width: 420px;
+  background-color: red($color: #ededed);
+  background-image: url('../../assets/images/Mark_Zuckerberg.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: flex-end;
+
+  .fa {
+    font-size: 30px;
+    color: white;
+  }
+
+  .card-info {
+    position: relative;
+    height: 60%;
+    padding-right: 30px;
+    bottom: 0px;
+
+    i {
+      font-size: 20px;
+    }
+
+    .card-title {
+      display: flex;
+      align-items: flex-end;
+
+      div {
+        display: inline;
+      }
+
+      .title {
+        color: white;
+        font-size: 40px;
+      }
+
+      .vote-icon {
+        position: relative;
+        bottom: 10px;
+        margin-right: 6px;
+        padding: 4px;
+        background-color: rgb(87, 184, 179);
+      }
+    }
+
+    .card-content {
+      color: white;
+      margin-left: 35px;
+
+      .remaining-time {
+        font-size: 12px;
+        margin-bottom: 15px;
+      }
+
+      .description {
+        font-weight: 300;
+      }
+
+      .voting {
+        position: absolute;
+        bottom: 80px;
+      }
+    }
+  }
+
+  .progress {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    height: 45px;
+    width: 100%;
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+
+    &__votes-up {
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      background-color: transparentize($color: rgb(87, 184, 179), $amount: 0.3);
+
+      div {
+        margin-right: 6px;
+      }
+    }
+
+    &__votes-down {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 8px;
+      background-color: transparentize($color: rgb(244, 176, 69), $amount: 0.3);
+
+      div {
+        margin-left: 6px;
+      }
+    }
+  }
+}
