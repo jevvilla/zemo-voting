@@ -1,28 +1,12 @@
 import React from 'react';
 
 import { VotingButtons } from '../VotingButtons';
+import { Character, Votes } from '../../common/types';
 
 import './styles.scss';
 
-type Votes = {
-  [key: string]: number;
-};
-
-type character = {
-  id: number;
-  imageUrl: string;
-  name: string;
-  category: string;
-  createdAt: string;
-  description: string;
-  votes: {
-    up: number;
-    down: number;
-  };
-};
-
 type Props = {
-  item: character;
+  item: Character;
 };
 
 export const Card: React.FC<Props> = ({ item }) => {
