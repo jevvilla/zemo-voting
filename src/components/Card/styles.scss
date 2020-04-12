@@ -25,6 +25,7 @@
     .card-title {
       display: flex;
       align-items: flex-end;
+      height: 100px;
 
       div {
         display: inline;
@@ -66,7 +67,7 @@
 
       .voting {
         position: absolute;
-        bottom: 80px;
+        bottom: 55px;
       }
     }
   }
