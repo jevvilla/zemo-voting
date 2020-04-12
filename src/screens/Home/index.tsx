@@ -6,7 +6,7 @@ import './styles.scss';
 
 export const Home = () => {
   return (
-    <div>
+    <div className="home-container">
       <CardContainer />
     </div>
   );
