@@ -1,0 +1,22 @@
+input[type='radio'] {
+  opacity: 0;
+  width: 0;
+
+  &:checked + .vote-icon {
+    border: 2px solid white;
+    padding: 4px;
+  }
+}
+
+.vote-icon {
+  padding: 6px;
+  margin-right: 12px;
+}
+
+.vote-up-icon {
+  background-color: rgb(87, 184, 179);
+}
+
+.vote-down-icon {
+  background-color: rgb(244, 176, 69);
+}
