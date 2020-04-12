@@ -6,7 +6,7 @@ import './styles.scss';
 
 type Props = {
   onVote: (vote: string) => void;
-  id: number;
+  id: string;
 };
 
 export const VotingButtons: React.FC<Props> = ({ onVote, id }) => {

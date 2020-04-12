@@ -3,7 +3,7 @@ export type Votes = {
 };
 
 export type Character = {
-  id: number;
+  id: string;
   imageUrl: string;
   name: string;
   category: string;

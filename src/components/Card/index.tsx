@@ -12,7 +12,11 @@ type Props = {
 export const Card: React.FC<Props> = ({ item }) => {
   const { id, name, imageUrl, description, createdAt, category, votes: totalVotes } = item;
 
-  const [votes, setVotes] = React.useState<Votes>(totalVotes);
+  const votesFromStorage = localStorage.getItem(id);
+
+  const [votes, setVotes] = React.useState<Votes>(
+    votesFromStorage ? JSON.parse(votesFromStorage) : totalVotes,
+  );
 
   const calculatePercentageOfVotes = (currentVotes: number): number => {
     const totalVotes = Object.values(votes).reduce((acc, curr) => acc + curr, 0);
@@ -23,7 +27,14 @@ export const Card: React.FC<Props> = ({ item }) => {
   };
 
   const registerVote = (vote: string) => {
-    setVotes((votes) => ({ ...votes, [vote]: votes[vote] + 1 }));
+    const newVotes = {
+      ...votes,
+      [vote]: votes[vote] + 1,
+    };
+
+    localStorage.setItem(id, JSON.stringify(newVotes));
+
+    setVotes(newVotes);
   };
 
   const votesUp = calculatePercentageOfVotes(votes.up);
