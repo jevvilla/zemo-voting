@@ -2,10 +2,10 @@
   position: relative;
   display: flex;
   height: 470px;
-  background-color: red($color: #ededed);
   background-size: cover;
   background-position: center;
   align-items: flex-end;
+  min-width: 450px;
 
   .fa {
     font-size: 30px;

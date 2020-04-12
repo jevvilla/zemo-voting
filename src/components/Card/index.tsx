@@ -14,6 +14,7 @@ export const Card: React.FC<Props> = ({ item }) => {
 
   const votesFromStorage = localStorage.getItem(id);
 
+  const [userVotedAlready, setUserVotedAlready] = React.useState<boolean>(false);
   const [votes, setVotes] = React.useState<Votes>(
     votesFromStorage ? JSON.parse(votesFromStorage) : totalVotes,
   );
@@ -35,7 +36,10 @@ export const Card: React.FC<Props> = ({ item }) => {
     localStorage.setItem(id, JSON.stringify(newVotes));
 
     setVotes(newVotes);
+    setUserVotedAlready(true);
   };
+
+  const handleVoteAgain = () => setUserVotedAlready(false);
 
   const votesUp = calculatePercentageOfVotes(votes.up);
   const votesDown = calculatePercentageOfVotes(votes.down);
@@ -60,10 +64,17 @@ export const Card: React.FC<Props> = ({ item }) => {
             <b>{createdAt}</b> in {category}
           </div>
           <div>
-            <span className="description">{description}</span>
+            <span className="description">
+              {userVotedAlready ? 'Thank you for voting!' : description}
+            </span>
           </div>
           <div className="voting">
-            <VotingButtons onVote={registerVote} id={id} />
+            <VotingButtons
+              onVote={registerVote}
+              id={id}
+              onVoteAgain={handleVoteAgain}
+              userVotedAlready={userVotedAlready}
+            />
           </div>
         </div>
       </div>
