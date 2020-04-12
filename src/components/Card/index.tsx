@@ -33,9 +33,15 @@ export const Card: React.FC<Props> = ({ item }) => {
     <div className="card-component" style={{ backgroundImage: `url(${imageUrl})` }}>
       <div className="card-info">
         <div className="card-title">
-          <span className="vote-icon">
-            <i className="fa fa-thumbs-up" />
-          </span>
+          {votes.up > votes.down ? (
+            <span className="vote-icon vote-icon-up">
+              <i className="fa fa-thumbs-up" />
+            </span>
+          ) : (
+            <span className="vote-icon vote-icon-down">
+              <i className="fa fa-thumbs-down" />
+            </span>
+          )}
           <span className="title">{name}</span>
         </div>
         <div className="card-content">
@@ -46,7 +52,7 @@ export const Card: React.FC<Props> = ({ item }) => {
             <span className="description">{description}</span>
           </div>
           <div className="voting">
-            <VotingButtons onVote={registerVote} />
+            <VotingButtons onVote={registerVote} id={id} />
           </div>
         </div>
       </div>

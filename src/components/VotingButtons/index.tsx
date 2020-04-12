@@ -6,9 +6,10 @@ import './styles.scss';
 
 type Props = {
   onVote: (vote: string) => void;
+  id: number;
 };
 
-export const VotingButtons: React.FC<Props> = ({ onVote }) => {
+export const VotingButtons: React.FC<Props> = ({ onVote, id }) => {
   const [selectedOption, setSelectedOption] = React.useState<string>('up');
 
   const handleOptionChange = (e: any) => {
@@ -24,7 +25,7 @@ export const VotingButtons: React.FC<Props> = ({ onVote }) => {
       <label>
         <input
           type="radio"
-          name="radioVote"
+          name={`radioVote-${id}`}
           value="up"
           checked={selectedOption === 'up'}
           onChange={handleOptionChange}
@@ -36,7 +37,7 @@ export const VotingButtons: React.FC<Props> = ({ onVote }) => {
       <label>
         <input
           type="radio"
-          name="radioVote"
+          name={`radioVote-${id}`}
           value="down"
           checked={selectedOption === 'down'}
           onChange={handleOptionChange}
