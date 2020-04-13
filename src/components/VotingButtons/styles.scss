@@ -3,13 +3,13 @@ input[type='radio'] {
   width: 0;
 
   &:checked + .vote-icon {
-    border: 2px solid white;
-    padding: 4px;
+    border: 1px solid white;
+    padding: 3px;
   }
 }
 
 .vote-icon {
-  padding: 6px;
+  padding: 3px;
   margin-right: 12px;
 }
 
