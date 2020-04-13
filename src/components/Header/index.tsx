@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './styles.scss';
 
@@ -14,8 +15,16 @@ export const Header = () => {
         </div>
         <div className="header__navigation-items">
           <ul>
-            <li>Past Trials</li>
-            <li>How It Works</li>
+            <li>
+              <NavLink exact={true} to="howitworks">
+                Past Trials
+              </NavLink>
+            </li>
+            <li>
+              <NavLink exact={true} to="howitworks">
+                How It Works
+              </NavLink>
+            </li>
             <li>Log In / Sign Up</li>
             <li>
               <i className="fa fa-search"></i>
