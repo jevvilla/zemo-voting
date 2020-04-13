@@ -1,12 +1,15 @@
+@import '../../config/responsive.scss';
+
 .footer {
   display: flex;
   justify-content: space-between;
   height: 60px;
   border-top: 2px dotted rgb(208, 208, 208);
-  position: fixed;
-  bottom: 0;
+  position: absolute;
   width: 100%;
+  max-width: 1300px;
   padding: 0 20px;
+  bottom: -100px;
 
   ul {
     list-style: none;
@@ -25,6 +28,31 @@
       i {
         color: rgb(90, 90, 90);
         font-size: 14px;
+      }
+    }
+  }
+}
+
+@include media-lg {
+  .footer {
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+
+      li {
+        display: inline;
+        font-size: 14px;
+        color: rgb(150, 150, 150);
+
+        &:not(:last-child) {
+          padding-right: 1em;
+        }
+
+        i {
+          color: rgb(90, 90, 90);
+          font-size: 20px;
+        }
       }
     }
   }
