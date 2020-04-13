@@ -1,34 +1,14 @@
 import React from 'react';
 
-import { CardContainer, Header } from '../../components';
+import { CardContainer } from '../../components';
 
 import './styles.scss';
 
 export const Home = () => {
   return (
     <div className="home-container">
-      <div className="home-banner">
-        <Header />
-      </div>
-      <div className="home-voting">
-        <CardContainer />
-        <div className="footer">
-          <ul>
-            <li>Terms and Conditions</li>
-            <li>Privacy Policy</li>
-            <li>Contact Us</li>
-          </ul>
-          <ul>
-            <li>Follow Us</li>
-            <li>
-              <i className="fa fa-facebook-square"></i>
-            </li>
-            <li>
-              <i className="fa fa-twitter"></i>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <div className="home-banner" />
+      <div className="home-voting">{/* <CardContainer /> */}</div>
     </div>
   );
 };

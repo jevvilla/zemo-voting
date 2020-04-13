@@ -1,45 +1,14 @@
 .home-container {
   .home-banner {
     width: 100%;
-    height: 60vh;
+    height: 40vh;
     background-image: url('https://ep01.epimg.net/elpais/imagenes/2018/03/12/album/1520854925_297953_1520859348_noticia_normal_recorte1.jpg');
     background-size: cover;
+    background-position: center;
   }
 
   .home-voting {
-    width: 950px;
+    // width: 950px;
     margin: auto;
-
-    .footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 60px;
-      border-top: 2px dotted rgb(208, 208, 208);
-      margin: 40px 0 10px 0;
-      position: relative;
-      bottom: 0;
-
-      ul {
-        list-style: none;
-        display: flex;
-        align-items: center;
-
-        li {
-          display: inline;
-          font-size: 11px;
-          color: rgb(150, 150, 150);
-
-          &:not(:last-child) {
-            padding-right: 1em;
-          }
-
-          i {
-            color: rgb(90, 90, 90);
-            font-size: 24px;
-          }
-        }
-      }
-    }
   }
 }
