@@ -1,6 +1,23 @@
-.vote-section-component {
-  display: grid;
-  margin-top: 30px;
-  grid-template-columns: 1fr 1fr;
-  gap: 2em;
+@import '../../config/responsive.scss';
+
+.card-container-component {
+  h1 {
+    padding: 30px 50px;
+  }
+
+  .vote-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+    padding: 0px 50px 30px 50px;
+  }
+}
+
+@include media-md {
+  .card-container-component {
+    .vote-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 }
