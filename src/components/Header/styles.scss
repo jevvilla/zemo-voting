@@ -60,6 +60,42 @@
   }
 }
 
+@include media-sm {
+  .header {
+    &__navigation {
+      &-bars:hover + &-items {
+        display: block !important;
+      }
+      &-items {
+        display: none !important;
+        width: 150px;
+        display: flex;
+        background-color: transparentize($color: yellowgreen, $amount: 0.4);
+        position: absolute;
+        right: 20px;
+        top: 55px;
+        padding: 20px 10px;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+
+          li {
+            line-height: 1.5;
+          }
+        }
+        .fa {
+          display: none;
+        }
+
+        &:hover {
+          display: block !important;
+        }
+      }
+    }
+  }
+}
+
 @include media-md {
   .header {
     &__navigation {
